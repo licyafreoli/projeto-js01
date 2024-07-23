@@ -1,53 +1,87 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap');
+
+:root {
+  --primary-color: #005580;
+  --secondary-color: #003d4d;
+  --background-color: #f0f8ff;
+  --text-color: #333;
+  --container-bg-color: #fff;
+  --container-shadow: rgba(0, 0, 0, 0.1);
+  --border-radius: 12px;
+  --transition-speed: 0.3s;
+}
+
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f0f8ff;
-    color: #333;
-    margin: 0;
-    padding: 20px;
-  }
-  
-  .container {
-    max-width: 800px;
-    margin: auto;
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  }
-  
-  h1 {
-    color: #005580;
-  }
-  
-  button {
-    padding: 10px 20px;
-    background-color: #005580;
-    color: #fff;
-    border: none;
-    cursor: pointer;
-    margin-top: 10px;
-  }
-  
-  button:hover {
-    background-color: #003d4d;
-  }
-  
-  input[type=text], input[type=number] {
-    width: 100%;
-    padding: 8px;
-    margin: 5px 0;
-    box-sizing: border-box;
-  }
-  
-  input[type=submit] {
-    background-color: #005580;
-    color: white;
-    padding: 12px 20px;
-    border: none;
-    cursor: pointer;
-  }
-  
-  input[type=submit]:hover {
-    background-color: #003d4d;
-  }
-  
+  font-family: 'Montserrat', Arial, sans-serif;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  margin: 0;
+  padding: 20px;
+  transition: background-color var(--transition-speed);
+}
+
+.container {
+  max-width: 800px;
+  margin: auto;
+  background-color: var(--container-bg-color);
+  padding: 20px;
+  border-radius: var(--border-radius);
+  box-shadow: 0 0 20px var(--container-shadow);
+  transition: box-shadow var(--transition-speed);
+}
+
+.container:hover {
+  box-shadow: 0 0 30px var(--container-shadow);
+}
+
+h1 {
+  color: var(--primary-color);
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+button {
+  padding: 10px 20px;
+  background-color: var(--primary-color);
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  margin-top: 10px;
+  border-radius: var(--border-radius);
+  transition: background-color var(--transition-speed), transform var(--transition-speed);
+}
+
+button:hover {
+  background-color: var(--secondary-color);
+  transform: scale(1.05);
+}
+
+input[type=text], input[type=number] {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  box-sizing: border-box;
+  border: 2px solid var(--primary-color);
+  border-radius: var(--border-radius);
+  transition: border-color var(--transition-speed);
+}
+
+input[type=text]:focus, input[type=number]:focus {
+  border-color: var(--secondary-color);
+  outline: none;
+}
+
+input[type=submit] {
+  background-color: var(--primary-color);
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  cursor: pointer;
+  border-radius: var(--border-radius);
+  transition: background-color var(--transition-speed), transform var(--transition-speed);
+}
+
+input[type=submit]:hover {
+  background-color: var(--secondary-color);
+  transform: scale(1.05);
+}
